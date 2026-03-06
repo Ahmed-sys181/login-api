@@ -1,3 +1,5 @@
-const express = require('express');
-const app = express(); 
-const dotenv = require('dotenv');
+import express from 'express';
+
+const app = express();
+
+export default app;
