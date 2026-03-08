@@ -26,7 +26,20 @@ const getPosts = async (req , res) => {
     }
 } ; 
 
-
+const updatePost = async (req , res) => { 
+    try {
+        if ( Object.keys( req.body )){
+            res.status(400).json({ message : "no data provided to update" })
+        }
+        const post = await Post.findByIdAndUpdate(
+            req.params.id ,
+            req.body ,
+            { new : true }
+        )
+    } catch (error) {
+        
+    }
+}
 
 export { 
     createPost , 
